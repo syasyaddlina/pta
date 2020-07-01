@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+<body>
+<HEADER>
+
+  <table bgcolor="silver" border="2" width="100%">
+    
+    <tr><td align="center"><h1>SELAMAT DATANG KE SISTEM KEHADIRAN LEWAT</h1></td></tr>
+
+  </table>
+</body> 
+<br><br>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	exportEnabled: true,
+	title:{
+		text: "ANALISIS KEHADIRAN LEWAT"
+	},
+	axisY:{ 
+		title: "Percentage",
+		includeZero: false, 
+		interval: .2,
+		suffix: "%",
+		valueFormatString: "#.0"
+	},
+	data: [{
+		type: "stepLine",
+		yValueFormatString: "#0.0\"%\"",
+		xValueFormatString: "MMM YYYY",
+		markerSize: 5,
+		dataPoints: [
+			{ x: new Date(2019, 0), y: 4.9 },
+			{ x: new Date(2019, 1), y: 4.9 },
+			{ x: new Date(2019, 2), y: 5.0 },
+			{ x: new Date(2019, 3), y: 5.0, indexLabel: "Highest", indexLabelFontColor: "#C24642" },
+			{ x: new Date(2019, 4), y: 4.7 },
+			{ x: new Date(2019, 5), y: 4.9 },
+			{ x: new Date(2019, 6), y: 4.9 },
+			{ x: new Date(2019, 7), y: 4.9 },
+			{ x: new Date(2019, 8), y: 4.9 },
+			{ x: new Date(2019, 9), y: 4.8 },
+			{ x: new Date(2019, 10), y: 4.6 },
+			{ x: new Date(2019, 11), y: 4.7 },
+			{ x: new Date(2020, 0), y: 4.8 },
+			{ x: new Date(2020, 1), y: 4.7 },
+			{ x: new Date(2020, 2), y: 4.5 },
+			{ x: new Date(2020, 3), y:4.4 },
+			{ x: new Date(2020, 4), y:4.3 },
+			{ x: new Date(2020, 5), y:4.4 }
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>
